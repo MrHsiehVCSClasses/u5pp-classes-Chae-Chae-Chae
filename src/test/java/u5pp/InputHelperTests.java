@@ -44,7 +44,8 @@ public class InputHelperTests {
     public void getYesNoInput_incorrectInput_doesNotThrowError() {
         Scanner sc = new Scanner("\ny\n");
         InputHelper ih = new InputHelper(sc);
-         sc.close();
+        assertTrue(ih.getYesNoInput(prompt));
+        sc.close();
 
         sc = new Scanner("asdf\nYes\n");
         ih = new InputHelper(sc);
